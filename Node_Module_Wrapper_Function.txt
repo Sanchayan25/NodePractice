@@ -1,0 +1,34 @@
+MODULE WRAPPER FUNCTION
+
+How Node Funtions Actually Work: 
+Note how we write the funtion:
+
+var url = 'http://mylogger.io.log';
+function log(message)
+{
+      console.log(message);
+} 
+module.exports.logOuter=log;
+
+Node doesnot execute this directly. It wraps such code inside a module under its own function.
+Note: Not sure if it does so for all code outside any funtion as well. Need to search and update
+
+To check this, do something like "var x=;" to understand this better. This will throw a syntactical error ( the inteneded detailed was not shown on my system)
+
+It wraps the user provided funtion in:
+function(exports,require,module, __filename,__dirname)
+{
+      ...
+}
+
+This is an Immediately Invoked Funtion Expression IIFE -> Javascript concept.
+
+This require funtion in the arguments, appears to be global but is actually local.
+
+exports -> this argument is reference to module.export. You can either use export as exports.log = log; or module.exports.log = log;
+We cannot reasign them ( for ex: exports =log; is not allowed) 
+
+console.log(__filename) -> C:\Users\Dell\NodeFirst-app\app.js   This is the complete path of the file.
+
+console.log(__dirname); -> C:\Users\Dell\NodeFirst-app
+
