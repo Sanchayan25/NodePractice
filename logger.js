@@ -11,11 +11,12 @@ function log(message)
 We will utilize the exports: {} property of Node to do it */
 
 
-module.exports.log=log; // Expected output: { log: [Function: log] }
+module.exports.logOuter=log;
 
-/* in the above statement, we are adding a method called log to the export object. Note that the name of the method "log" (on the left of =) can be set to anything and needs to be referenced by that name wherever it is used. The second "log" refers to the internal log
+/* in the above statement, we are adding a method called log to the export object. Note that the name of the method "logOuter" (on the left of =) can be set to anything and needs to be referenced by that name wherever it is used. The second "log" refers to the internal log
+
 module.exports.endPoint=url;
-Another example of a public name for an internal variable. 
+Above statement is another example of a public name for an internal variable. 
 We commented it as it is an implementation detail, and should not be public.*/
 
 
