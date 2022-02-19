@@ -24,3 +24,5 @@ var message=''
 console.log(global.message); --> would return "undefined" as message variable is not defined/present globally.
 This is Node's modular system.
 
+console.log(__filename);  -> returns
+console.log(__dirname); -> returns

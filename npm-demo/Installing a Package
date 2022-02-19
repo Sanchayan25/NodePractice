@@ -1,0 +1,15 @@
+Before you add a json package, you need to create a file called "package.json"
+package.json - metadata about your application (name, version, authors, address of Git repository etc)
+
+
+npm init : This command walks you through creating a package.json file, step by step. It asks you to confirm if the json file is to be created under the same folder path under which it was run. Following this there are bunch of other questions that need confirmation/inputs before the package.json file is created.
+
+npm init --yes : Alternatively, use this command for setting all the values to yes and create the package.json file
+
+It is a good practise that at the start of project, run npm in it to create package.json
+
+After package.json is setup, each time a package is installed - it goes under node_modules folder. The package.json created under the parent folder is automatically updated with the details of the new package installed as a dependency.
+You shall also notice a package.json file present under the new package/module that was installed. So all node modules also have a package.json present just like our node application.
+
+
+Previously, this updation of the application package.json with the new installed dependancy module was not automatic. We use to instead have a command: npm i <modeule_name> --save
