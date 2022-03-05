@@ -13,6 +13,7 @@ Node takes care of this by updating all the dependancy under the main package.js
 ** 
 Naturally, node_modules becomes very big in size as the application complexity increases. It is not viable to change our source code to source control repository with such a large file size involved. We shall exclude this folder from git.
 Steps: introduce a new file ".gitignore". Note this file shall have no name but only extensions.
+Type the name of the folder/file to be skipped. For folder, ensure that the name ends with "/". For example: node_modules/
 **
 
 
